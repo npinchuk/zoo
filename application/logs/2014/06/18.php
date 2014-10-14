@@ -1,0 +1,115 @@
+<?php defined('SYSPATH') OR die('No direct script access.'); ?>
+
+2014-06-18 11:13:30 --- EMERGENCY: View_Exception [ 0 ]: The requested view /login/recovey could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php:137
+2014-06-18 11:13:30 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(137): Kohana_View->set_filename('/login/recovey')
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(30): Kohana_View->__construct('/login/recovey', NULL)
+#2 /Applications/MAMP/htdocs/zoo/application/classes/Controller/Login.php(20): Kohana_View::factory('/login/recovey')
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(84): Controller_Login->action_recovery()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Login))
+#6 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#9 {main} in /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php:137
+2014-06-18 12:48:46 --- EMERGENCY: View_Exception [ 0 ]: The requested view /nav could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php:137
+2014-06-18 12:48:46 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(137): Kohana_View->set_filename('/nav')
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(30): Kohana_View->__construct('/nav', NULL)
+#2 /Applications/MAMP/htdocs/zoo/application/classes/Controller/Page.php(10): Kohana_View::factory('/nav')
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(84): Controller_Page->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Page))
+#6 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#9 {main} in /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php:137
+2014-06-18 12:48:56 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: nav ~ APPPATH/views/layouts/main.php [ 162 ] in /Applications/MAMP/htdocs/zoo/application/views/layouts/main.php:162
+2014-06-18 12:48:56 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/application/views/layouts/main.php(162): Kohana_Core::error_handler(8, 'Undefined varia...', '/Applications/M...', 162, Array)
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(61): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(348): Kohana_View::capture('/Applications/M...', Array)
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller/Template.php(44): Kohana_View->render()
+#4 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(87): Kohana_Controller_Template->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Page))
+#7 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#10 {main} in /Applications/MAMP/htdocs/zoo/application/views/layouts/main.php:162
+2014-06-18 12:53:26 --- EMERGENCY: View_Exception [ 0 ]: The requested view /ads/list could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php:137
+2014-06-18 12:53:26 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(137): Kohana_View->set_filename('/ads/list')
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(30): Kohana_View->__construct('/ads/list', NULL)
+#2 /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ads.php(9): Kohana_View::factory('/ads/list')
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(84): Controller_Ads->action_list()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Ads))
+#6 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#9 {main} in /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php:137
+2014-06-18 12:54:02 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: pettypes ~ APPPATH/views/ads/list.php [ 40 ] in /Applications/MAMP/htdocs/zoo/application/views/ads/list.php:40
+2014-06-18 12:54:02 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/application/views/ads/list.php(40): Kohana_Core::error_handler(8, 'Undefined varia...', '/Applications/M...', 40, Array)
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(61): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(348): Kohana_View::capture('/Applications/M...', Array)
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(228): Kohana_View->render()
+#4 /Applications/MAMP/htdocs/zoo/application/views/layouts/main.php(166): Kohana_View->__toString()
+#5 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(61): include('/Applications/M...')
+#6 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(348): Kohana_View::capture('/Applications/M...', Array)
+#7 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller/Template.php(44): Kohana_View->render()
+#8 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(87): Kohana_Controller_Template->after()
+#9 [internal function]: Kohana_Controller->execute()
+#10 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Ads))
+#11 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#12 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#13 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#14 {main} in /Applications/MAMP/htdocs/zoo/application/views/ads/list.php:40
+2014-06-18 15:29:21 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: phone ~ APPPATH/views/ads/new.php [ 25 ] in /Applications/MAMP/htdocs/zoo/application/views/ads/new.php:25
+2014-06-18 15:29:21 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/application/views/ads/new.php(25): Kohana_Core::error_handler(8, 'Undefined varia...', '/Applications/M...', 25, Array)
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(61): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(348): Kohana_View::capture('/Applications/M...', Array)
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(228): Kohana_View->render()
+#4 /Applications/MAMP/htdocs/zoo/application/views/layouts/main.php(166): Kohana_View->__toString()
+#5 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(61): include('/Applications/M...')
+#6 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/View.php(348): Kohana_View::capture('/Applications/M...', Array)
+#7 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller/Template.php(44): Kohana_View->render()
+#8 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(87): Kohana_Controller_Template->after()
+#9 [internal function]: Kohana_Controller->execute()
+#10 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Ads))
+#11 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#12 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#13 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#14 {main} in /Applications/MAMP/htdocs/zoo/application/views/ads/new.php:25
+2014-06-18 18:56:23 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: city_id ~ APPPATH/classes/Controller/Ajax.php [ 26 ] in /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php:26
+2014-06-18 18:56:23 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php(26): Kohana_Core::error_handler(8, 'Undefined index...', '/Applications/M...', 26, Array)
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(84): Controller_Ajax->action_getdistrict()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Ajax))
+#4 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#7 {main} in /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php:26
+2014-06-18 18:56:26 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: city_id ~ APPPATH/classes/Controller/Ajax.php [ 26 ] in /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php:26
+2014-06-18 18:56:26 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php(26): Kohana_Core::error_handler(8, 'Undefined index...', '/Applications/M...', 26, Array)
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(84): Controller_Ajax->action_getdistrict()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Ajax))
+#4 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#7 {main} in /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php:26
+2014-06-18 19:58:19 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: pettype_id ~ APPPATH/classes/Controller/Ajax.php [ 9 ] in /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php:9
+2014-06-18 19:58:19 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php(9): Kohana_Core::error_handler(8, 'Undefined index...', '/Applications/M...', 9, Array)
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(84): Controller_Ajax->action_getbreeds()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Ajax))
+#4 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#7 {main} in /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php:9
+2014-06-18 19:59:26 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: pettype_id ~ APPPATH/classes/Controller/Ajax.php [ 9 ] in /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php:9
+2014-06-18 19:59:26 --- DEBUG: #0 /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php(9): Kohana_Core::error_handler(8, 'Undefined index...', '/Applications/M...', 9, Array)
+#1 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Controller.php(84): Controller_Ajax->action_getbreeds()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Ajax))
+#4 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /Applications/MAMP/htdocs/zoo/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /Applications/MAMP/htdocs/zoo/index.php(118): Kohana_Request->execute()
+#7 {main} in /Applications/MAMP/htdocs/zoo/application/classes/Controller/Ajax.php:9

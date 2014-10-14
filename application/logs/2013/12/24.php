@@ -1,0 +1,45 @@
+<?php defined('SYSPATH') OR die('No direct script access.'); ?>
+
+2013-12-24 21:57:21 --- EMERGENCY: ErrorException [ 4096 ]: Object of class Controller_Admin_Art could not be converted to string ~ APPPATH/classes/Controller/Admin/Art.php [ 59 ] in /Applications/MAMP/htdocs/kohana/application/classes/Controller/Admin/Art.php:59
+2013-12-24 21:57:21 --- DEBUG: #0 /Applications/MAMP/htdocs/kohana/application/classes/Controller/Admin/Art.php(59): Kohana_Core::error_handler(4096, 'Object of class...', '/Applications/M...', 59, Array)
+#1 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Controller.php(84): Controller_Admin_Art->action_edit()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Art))
+#4 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /Applications/MAMP/htdocs/kohana/index.php(118): Kohana_Request->execute()
+#7 {main} in /Applications/MAMP/htdocs/kohana/application/classes/Controller/Admin/Art.php:59
+2013-12-24 22:06:09 --- EMERGENCY: Kohana_Exception [ 0 ]: The artparts property does not exist in the Model_Arts class ~ MODPATH/orm/classes/Kohana/ORM.php [ 687 ] in /Applications/MAMP/htdocs/kohana/modules/orm/classes/Kohana/ORM.php:603
+2013-12-24 22:06:09 --- DEBUG: #0 /Applications/MAMP/htdocs/kohana/modules/orm/classes/Kohana/ORM.php(603): Kohana_ORM->get('artparts')
+#1 /Applications/MAMP/htdocs/kohana/application/views/admin/artedit.php(66): Kohana_ORM->__get('artparts')
+#2 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(61): include('/Applications/M...')
+#3 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(348): Kohana_View::capture('/Applications/M...', Array)
+#4 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(228): Kohana_View->render()
+#5 /Applications/MAMP/htdocs/kohana/application/views/admin/layouts/main.php(336): Kohana_View->__toString()
+#6 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(61): include('/Applications/M...')
+#7 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(348): Kohana_View::capture('/Applications/M...', Array)
+#8 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Controller/Template.php(44): Kohana_View->render()
+#9 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Controller.php(87): Kohana_Controller_Template->after()
+#10 [internal function]: Kohana_Controller->execute()
+#11 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Art))
+#12 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#13 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#14 /Applications/MAMP/htdocs/kohana/index.php(118): Kohana_Request->execute()
+#15 {main} in /Applications/MAMP/htdocs/kohana/modules/orm/classes/Kohana/ORM.php:603
+2013-12-24 22:07:09 --- EMERGENCY: Kohana_Exception [ 0 ]: The artparts property does not exist in the Model_Arts class ~ MODPATH/orm/classes/Kohana/ORM.php [ 687 ] in /Applications/MAMP/htdocs/kohana/modules/orm/classes/Kohana/ORM.php:603
+2013-12-24 22:07:09 --- DEBUG: #0 /Applications/MAMP/htdocs/kohana/modules/orm/classes/Kohana/ORM.php(603): Kohana_ORM->get('artparts')
+#1 /Applications/MAMP/htdocs/kohana/application/views/admin/artedit.php(66): Kohana_ORM->__get('artparts')
+#2 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(61): include('/Applications/M...')
+#3 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(348): Kohana_View::capture('/Applications/M...', Array)
+#4 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(228): Kohana_View->render()
+#5 /Applications/MAMP/htdocs/kohana/application/views/admin/layouts/main.php(336): Kohana_View->__toString()
+#6 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(61): include('/Applications/M...')
+#7 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/View.php(348): Kohana_View::capture('/Applications/M...', Array)
+#8 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Controller/Template.php(44): Kohana_View->render()
+#9 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Controller.php(87): Kohana_Controller_Template->after()
+#10 [internal function]: Kohana_Controller->execute()
+#11 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Art))
+#12 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#13 /Applications/MAMP/htdocs/kohana/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#14 /Applications/MAMP/htdocs/kohana/index.php(118): Kohana_Request->execute()
+#15 {main} in /Applications/MAMP/htdocs/kohana/modules/orm/classes/Kohana/ORM.php:603
