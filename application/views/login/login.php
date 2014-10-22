@@ -1,62 +1,89 @@
-<div class="widget widget-blue">
-  <div class="widget-title">
-    <h3 class="text-center"><i class="icon-lock"></i> Вход в Unipets.ru</h3>
-  </div>
-  <div class="widget-content">
-    <form action="/login/testreg" role="form" method="POST" id="login-form-2">
-      <?php 
-          if ($error == 1 ){
-            // ошибка
-            echo "<div class='alert alert-danger alert-dismissable'>
-              <i class='icon-remove-sign'></i> <strong>Внимание!</strong> Пользователь с такой комбинацией логина и пароля не найден.
-            </div>";
-          }
-          if ($error == 2 ){
-            // ошибка
-            echo "<div class='alert alert-danger alert-dismissable'>
-              <i class='icon-remove-sign'></i> <strong>Внимание!</strong> Адрес который вы указали не найден.
-            </div>";
-          }
-          if ($error == 3 ){
-            // ошибка
-            echo "<div class='alert alert-danger alert-dismissable'>
-              <i class='icon-remove-sign'></i> <strong>Внимание!</strong> Ключ для восстановление пароля не верен.
-            </div>";
-          }
-           if ($error == 4 ){
-            // ошибка
-            echo "<div class='alert alert-warning alert-dismissable'>
-              <i class='icon-remove-sign'></i> <strong>Внимание!</strong> Для продолжения восстанолвения пароля - проверьте почту.
-            </div>";
-          }
-          ?>
-      <div class="lined-separator">Введите логин/пароль</div>
-      <div class="form-group relative-w">
-        <input type="email" class="form-control" name="email" placeholder="Введите email">
-        <i class="icon-envelope-alt input-abs-icon"></i>
-      </div>
-      <div class="form-group relative-w">
-        <input type="password" class="form-control" name="pass"  placeholder="Пароль">
-        <i class="icon-lock input-abs-icon"></i>
-      </div>
-      <div class="form-group">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Запомнить меня
-          </label>
+<div class="content">
+  <div class="container"> 
+    <!-- Middle Content Start -->
+    <div class="vd_content-wrapper">
+      <div class="vd_container">
+        <div class="vd_content clearfix">
+          <div class="vd_content-section clearfix">
+            <div class="vd_login-page">
+              <div class="heading clearfix">
+                <div class="logo">
+                  <h2 class="mgbt-xs-5"><img src="/fe/img/logo.png" alt="logo"></h2>
+                </div>
+                <h4 class="text-center font-semibold vd_grey">Авторизация в Unipets</h4>
+              </div>
+              <div class="panel widget">
+                <div class="panel-body">
+                  <div class="login-icon entypo-icon"> <i class="icon-key"></i> </div>
+                  <form class="form-horizontal" id="login-form" action="/login/testreg" role="form" method="POST">
+                    <div class="alert alert-danger 
+                         <?php 
+                         if ($error == 0) {
+                           echo "vd_hidden";
+                         }
+                         ?>
+                        
+                         
+                         ">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
+                      <span class="vd_alert-icon"><i class="fa fa-exclamation-circle vd_red"></i></span><strong>Ошибка!</strong> Войти не удалось</div>
+                    
+                    <div class="form-group  mgbt-xs-20">
+                      <div class="col-md-12">
+                        <div class="label-wrapper sr-only">
+                          <label class="control-label" for="email">Email</label>
+                        </div>
+                        <div class="vd_input-wrapper" id="email-input-wrapper"> <span class="menu-icon"> <i class="fa fa-envelope"></i> </span>
+                          <input type="email" placeholder="Email" id="email" name="email" class="required" required>
+                        </div>
+                        <div class="label-wrapper">
+                          <label class="control-label sr-only" for="password">Пароль</label>
+                        </div>
+                        <div class="vd_input-wrapper" id="password-input-wrapper" > <span class="menu-icon"> <i class="fa fa-lock"></i> </span>
+                          <input type="password" placeholder="Пароль" id="password" name="password" class="required" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="vd_login-error" class="alert alert-danger hidden"><i class="fa fa-exclamation-circle fa-fw"></i> Пожлауйста заполните все поля</div>
+                    <div class="form-group">
+                      <div class="col-md-12 text-center mgbt-xs-5">
+                        <button class="btn vd_bg-green vd_white width-100" type="submit" id="login-submit">Войти</button>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <div class="vd_checkbox">
+                              <input type="checkbox" id="checkbox-1" value="1">
+                              <label for="checkbox-1"> Запомнить</label>
+                            </div>
+                          </div>
+                          <div class="col-xs-6 text-right">
+                            <div class=""> <a href="/fe/pages-forget-password.html">Забыли пароль? </a> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- Panel Widget -->
+              <div class="register-panel text-center font-semibold"> <a href="/login/reg">Создать аккаунт<span class="menu-icon"><i class="fa fa-angle-double-right fa-fw"></i></span></a> </div>
+            </div>
+            <!-- vd_login-page --> 
+
+          </div>
+          <!-- .vd_content-section --> 
+
         </div>
+        <!-- .vd_content --> 
       </div>
-       <input type="submit" value="Вход" class="btn btn-success btn-rounded"/>
-      <div class="no-account-yet">
-        У вас еще нет аккаунта? <a href="/login/reg">Зарегистрироваться сейчас</a>
-      </div>
-       <div class="no-account-yet">
-         <a href="/login/recovery">Забыли пароль?</a>
-      </div>
-    </form>
+      <!-- .vd_container --> 
+    </div>
+    <!-- .vd_content-wrapper --> 
+
+    <!-- Middle Content End --> 
+
   </div>
+  <!-- .container --> 
 </div>
-<script type="text/javascript">
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
+<!-- .content -->

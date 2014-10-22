@@ -8,6 +8,8 @@ class Controller_Page extends Controller_Common {
   public function action_index() {
 //  echo $this->usid;
     $content = View::factory('/home');
+    $head = View::factory('/navs/head');
+    
     $nav = View::factory('/navs/home');
     $session = Session::instance();
    
@@ -235,6 +237,7 @@ class Controller_Page extends Controller_Common {
     $content->result = $ads;
     $this->template->content = $content;
     $this->template->nav = $nav;
+    $this->template->head = $head;
   }
 
 }

@@ -5,9 +5,9 @@ defined('SYSPATH') or die('No direct script access.');
 class Controller_Login extends Controller_Common2 {
 
   public function action_login() {
+    // находим вьюшку
     $content = View::factory('/login/login');
-    // если прилетает ошибка
-
+    // если прилетает ошибка 
     $id = $this->request->param('id');
     if (isset($id)) {
       // если ошибка есть отправляем ее во вьюху
@@ -16,6 +16,8 @@ class Controller_Login extends Controller_Common2 {
       $content->error = 0;
     }
     $this->template->content = $content;
+    $this->template->title = "Вход в Unipets"; // название страницы
+    $this->template->keywords = "Вход в Unipets"; // название страницы
   }
 
   public function action_recovery() {
@@ -47,9 +49,9 @@ class Controller_Login extends Controller_Common2 {
     $email_from = 'nikitos_push@mail.ru';
     $email_subject = 'Пароль восстановлен ';
     $headers = 'From: nikitos_push@mail.ru' . "\r\n" .
-        'Reply-To: nikitos_push@mail.ru' . "\r\n" .
-        'Content-type: text/html; charset=utf-8' . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+            'Reply-To: nikitos_push@mail.ru' . "\r\n" .
+            'Content-type: text/html; charset=utf-8' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
 //      $headers = 'From: ' . $email_from . "\r\n" .
 //              'Reply-To: ' . $email_from . "\r\n";
     $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
@@ -77,9 +79,9 @@ class Controller_Login extends Controller_Common2 {
       $email_from = 'nikitos_push@mail.ru';
       $email_subject = 'Восстановление пароля ';
       $headers = 'From: nikitos_push@mail.ru' . "\r\n" .
-          'Reply-To: nikitos_push@mail.ru' . "\r\n" .
-          'Content-type: text/html; charset=utf-8' . "\r\n" .
-          'X-Mailer: PHP/' . phpversion();
+              'Reply-To: nikitos_push@mail.ru' . "\r\n" .
+              'Content-type: text/html; charset=utf-8' . "\r\n" .
+              'X-Mailer: PHP/' . phpversion();
 //      $headers = 'From: ' . $email_from . "\r\n" .
 //              'Reply-To: ' . $email_from . "\r\n";
       $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
@@ -97,22 +99,28 @@ class Controller_Login extends Controller_Common2 {
   public function action_reg() {
     $content = View::factory('/login/reg');
     $id = $this->request->param('id');
+    
     if (isset($id)) {
-      // такой пользователь уже есть
       $content->error = $id;
     } else {
       $content->error = 0;
     }
     $this->template->content = $content;
+    $this->template->title = "Вход в Unipets"; // название страницы
+    $this->template->keywords = "Вход в Unipets"; // название страницы
   }
 
   public function action_savereg() {
     $content = View::factory('/login/reg');
+    if ($_POST['pass'] <> $_POST['pass2']) {
+      Controller::redirect('/login/reg/2');
+    }
     $check = ORM::factory('users')->where('email', '=', $_POST['email'])->find();
     if ($check->id > 0) {
       // такой пользователь уже есть
       Controller::redirect('/login/reg/1');
     } else {
+      
       $_POST['pass'] = md5($_POST['pass']);
       $_POST['created'] = date("Y-m-d H:i:s");
       if (isset($_POST['title'])) {
@@ -122,28 +130,27 @@ class Controller_Login extends Controller_Common2 {
         $_POST['ustype_id'] = 1;
       }
       // готовим хэш для активации по почте
-      $megasave = $_POST['surname'] . $_POST['name'] . $_POST['email'];
+      $megasave = $_POST['name'] . $_POST['lastname'] . $_POST['email'];
       $megasave = md5($megasave);
       $_POST['megasave'] = $megasave;
       $save = ORM::factory('users')->values($_POST)->save();
-      $session = Session::instance();
-      $session->set('usid', $save->id);
-      $session->set('ustitle', $save->name);
-      $session->set('ustype_id', $save->ustype_id);
       // отправляем на почту активацию
       $email_to = $_POST['email'];
       $email_from = 'nikitos_push@mail.ru';
       $email_subject = 'Регистрация на сайте Unipets.ru ';
       $headers = 'From: info@unipets.ru' . "\r\n" .
-          'Reply-To: info@unipets.ru' . "\r\n" .
-          'Content-type: text/html; charset=utf-8' . "\r\n" .
-          'X-Mailer: PHP/' . phpversion();
+              'Reply-To: info@unipets.ru' . "\r\n" .
+              'Content-type: text/html; charset=utf-8' . "\r\n" .
+              'X-Mailer: PHP/' . phpversion();
       $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
       $email_message = "Здравствуйте, " . $_POST['name'] . "!<br><p>Это письмо вы получили при регистрации на сайте Unipets.ru. Чтобы активировать вашу запись, нажимте <a href='http://unipets.ru/login/check/" . $megasave . "'>сюда</a></p>";
       mail($email_to, $email_subject, $email_message, $headers);
-       $session->set("usid", $check->id);
-      $session->set("ustitle", $check->title);
-      $session->set("manager", $check->manager);
+      
+      
+      $session = Session::instance();
+      $session->set('usid', $save->id);
+      $session->set('ustitle', $save->name." ".$save->lastname);
+      $session->set('ustype_id', $save->ustype_id);
       $session->set("ustype_id", $check->ustype_id);
       $session->set("activated", $check->activated);
       $session->set("email", $check->email);
@@ -160,10 +167,10 @@ class Controller_Login extends Controller_Common2 {
 
   public function action_testreg() {
     $session = Session::instance();
-    $_POST['pass'] = md5($_POST['pass']);
+    $_POST['pass'] = md5($_POST['password']);
     $check = ORM::factory('users')->where('email', '=', $_POST['email'])->where('pass', '=', $_POST['pass'])->find();
     if ($check->id > 0) {
-      // OK
+      // OK. передаем данные в куку чтобы потом было легче жить.
       $session->set("usid", $check->id);
       $session->set("ustitle", $check->title);
       $session->set("manager", $check->manager);

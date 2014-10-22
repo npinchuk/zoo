@@ -1,112 +1,153 @@
+<div class="content">
+  <div class="container"> 
 
-<div class="row">
-  <div class="col-md-12">
-    <ul class="nav nav-tabs">
-      <li class="active"><a href="#tab_pie_chart" data-toggle="tab"><i class="icon-user"></i> Частое лицо</a></li>
-      <li><a href="#tab_bar_chart" data-toggle="tab"><i class="icon-briefcase"></i> Компания</a></li>
-    </ul>
-    <div class="tab-content bottom-margin">
-      <div class="tab-pane active" id="tab_pie_chart">
-        <div class="widget widget-blue">
+    <!-- Middle Content Start -->
 
-          <div class="widget-content">
-            <?php
-            if ($error == 1) {
-              // такой пользователь уже есть
-              echo "<div class='alert alert-danger alert-dismissable'>
-              <i class='icon-remove-sign'></i> <strong>Внимание!</strong> Пользователь с таким адресом электронной почты уже существует. <strong><a href='/login/recovery'>Забыли пароль?</a></strong>
-            </div>";
-            }
-            ?>
-            <form action="/login/savereg"  method="POST" role="form">
-              <div class="form-group relative-w  ">
-                <input type="text" class="form-control regname" name="manager" required placeholder="Контактное лицо" />
-                <i class="icon-user input-abs-icon"></i>
-                <p class="help-block regnamealert">Ваше имя</p>
+    <div class="vd_content-wrapper" >
+      <div class="vd_container">
+        <div class="vd_content clearfix">
+          <div class="vd_content-section clearfix">
+            <div class="vd_register-page">
+              <div class="heading clearfix">
+                <div class="logo">
+                  <h2 class="mgbt-xs-5"><img src="/fe/img/logo.png" alt="logo"></h2>
+                </div>
+                <h4 class="text-center font-semibold vd_grey">Регистрация</h4>
               </div>
-              <div class="form-group relative-w  ">
-                <input type="text" class="form-control regphone"  name="phone" required placeholder="Ваш телефон" />
-                <i class="icon-phone input-abs-icon"></i>
-                <p class="help-block regphonealert ">Укажите номер телефона </p>
-              </div>
-              <br>
-              <div class="form-group relative-w">
-                <input type="email" class="form-control regemail" name="email" required placeholder="Ваш Email" />
-                <i class="icon-envelope-alt input-abs-icon"></i>
-                <p class="help-block has-error regemailalert">Ваш адрес элекронной почты</p>
-              </div>
-              <div class="form-group relative-w">
-                <input type="password" class="form-control regpass"  name="pass"  required placeholder="Пароль" />
-                <i class="icon-lock input-abs-icon"></i>
-                <p class="help-block has-error regpassalert">Ваш пароль</p>
-              </div>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" checked> Я согласен с <a href="#">правилами</a> и  <a href="#">условиями политики безопасности</a>.
-                  </label>
+              <div class="panel widget">
+                <div class="panel-body">
+<!--                  <div id="register-success" class="alert alert-success" style="display:none;"><i class="fa fa-exclamation-circle fa-fw"></i> Registration confirmation has been sent to your email </div>
+                  <div id="register-passerror" class="alert alert-danger" style="display:none;"><i class="fa fa-exclamation-circle fa-fw"></i> Your password and Confirm password are not same </div>-->
+                  <form class="form-horizontal"  action="/login/savereg" role="form" method="POST" id="register-form">
+                    <div class="alert alert-danger 
+                         <?php 
+                         if ($error <> 1) {
+                           echo "vd_hidden";
+                         }
+                         ?>
+                         
+                         
+                         ">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
+                      <span class="vd_alert-icon"><i class="fa fa-exclamation-circle vd_red"></i></span><strong>Ошибка!</strong> Пользователь с таким адресом электронной почты уже существует</div>
+                    <div class="alert alert-warning 
+                         <?php 
+                         if ($error <> 2) {
+                           echo "vd_hidden";
+                         }
+                         ?>
+                         ">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
+                      <span class="vd_alert-icon"><i class="fa fa-exclamation-circle vd_red"></i></span>Пароли не совпадают </div>                    
+                    <div class="alert alert-success vd_hidden">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
+                      <span class="vd_alert-icon"><i class="fa fa-check-circle vd_green"></i></span>Registration confirmation has been sent to your email. </div>                  
+                    <div class="form-group">
+                      <div class="col-md-6">
+                        <div class="label-wrapper">
+                          <label class="control-label">Ваше имя <span class="vd_red">*</span></label>
+                        </div>
+                        <div class="vd_input-wrapper" id="first-name-input-wrapper"> <span class="menu-icon"> <i class="fa fa-user"></i> </span>
+                          <input type="text" placeholder="Имя" value="имя1" class="required" required name="name" id="name">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="label-wrapper">
+                          <label class="control-label">Ваша фамилия <span class="vd_red">*</span></label>
+                        </div>
+                        <div class="vd_input-wrapper" id="last-name-input-wrapper"> <span class="menu-icon"> <i class="fa fa-user"></i> </span>
+                          <input type="text" placeholder="Фамилия" class="required" value='фамилия' required name="lastname" id="lastname">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-12">
+                        <div class="label-wrapper">
+                          <label class="control-label">Название компании (если вы юр лицо)<span class="vd_red"></span></label>
+                        </div>
+                        <div class="vd_input-wrapper" id="company-input-wrapper"> <span class="menu-icon"> <i class="fa fa-briefcase"></i> </span>
+                          <input type="text" placeholder="ООО 'Собачка'" class="required" value='ооо капуста' required  name="company" id="company">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                     
+                      <div class="col-md-12">
+                        <div class="label-wrapper">
+                          <label class="control-label">Телефон <span class="vd_red">*</span></label>
+                        </div>
+                        <div class="vd_input-wrapper no-icon" id="phone-input-wrapper">
+                          <input type="number" placeholder="Phone Number" class="required" value='8282828' required  name="phone" id="phone">
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <div class="col-md-12">
+                        <div class="label-wrapper">
+                          <label class="control-label">Email <span class="vd_red">*</span></label>
+                        </div>
+                        <div class="vd_input-wrapper" id="email-input-wrapper"> <span class="menu-icon"> <i class="fa fa-envelope"></i> </span>
+                          <input type="email" placeholder="Email" class="required" value='nik@nik.su' required  name="email" id="email">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-6">
+                        <div class="label-wrapper">
+                          <label class="control-label">Пароль <span class="vd_red">*</span></label>
+                        </div>
+                        <div class="vd_input-wrapper" id="password-input-wrapper"> <span class="menu-icon"> <i class="fa fa-lock"></i> </span>
+                          <input type="password" placeholder="Пароль" class="required" value='123' required  name="pass" id="password">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="label-wrapper">
+                          <label class="control-label">Пароль еще раз <span class="vd_red">*</span></label>
+                        </div>
+                        <div class="vd_input-wrapper" id="confirm-password-input-wrapper"> <span class="menu-icon"> <i class="fa fa-lock"></i> </span>
+                          <input type="password" placeholder="подтверждение пароля" class="required" value='123' required  name="pass2" id="confirmpass">
+                        </div>
+                      </div>
+                    </div>
+                    <div id="vd_login-error" class="alert alert-danger hidden"><i class="fa fa-exclamation-circle fa-fw"></i> Please fill the necessary field </div>
+                    <div class="form-group">
+                      <div class="col-md-12 mgbt-xs-10 mgtp-20">
+                        <div class="vd_checkbox">
+                          <input type="checkbox" id="checkbox-1" value="1">
+                          <label for="checkbox-1"> Подписаться на обновления</label>
+                        </div>
+                        <div class="vd_checkbox">
+                          <input type="checkbox" id="checkbox-2" value="1" required name="checkbox-2">
+                          <label for="checkbox-2"> Я соглашаюсь с <a href="#">правилами</a> пользования сервиса Unipets.ru</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12 text-center mgbt-xs-5">
+                        <button class="btn vd_bg-green vd_white width-100" type="submit" id="submit-register" name="submit-register">Регистрация</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-              <input type="submit" value="Зарегистрироваться" class="btn btn-success btn-rounded regsave"/>
-              <div class="no-account-yet">
-                У Вас уже есть аккаунт? <a href="/login/login">Войти</a>
-              </div>
-            </form>
+              <!-- Panel Widget -->
+              <div class="register-panel text-center font-semibold"> Уже есть аккаунт? <br/>
+                <a href="/login/login">Войти<span class="menu-icon"><i class="fa fa-angle-double-right fa-fw"></i></span></a> </div>
+            </div>
+            <!-- vd_login-page --> 
+
           </div>
+          <!-- .vd_content-section --> 
+
         </div>
+        <!-- .vd_content --> 
       </div>
-      <div class="tab-pane" id="tab_bar_chart">
-        <div class="widget widget-blue">
-          <div class="widget-content">
-            <?php
-            if ($error == 1) {
-              // такой пользователь уже есть
-              echo "<div class='alert alert-danger alert-dismissable'>
-              <i class='icon-remove-sign'></i> <strong>Внимание!</strong> Пользователь с таким адресом электронной почты уже существует. <strong><a href='/login/recovery'>Забыли пароль?</a></strong>
-            </div>";
-            }
-            ?>
-            <form action="/login/savereg"  method="POST" role="form">
-              <div class="form-group relative-w">
-                <input type="text" class="form-control" name="title" required placeholder="Название компании" />
-                <i class="icon-user input-abs-icon"></i>
-              </div>
-              <div class="form-group relative-w">
-                <input type="text" class="form-control" name="manager" required placeholder="Контактное лицо" />
-                <i class="icon-user input-abs-icon"></i>
-              </div>
-              <div class="input-group">
-                <span class="input-group-addon">+7</span>
-                <input type="text" class="form-control"  name="phone" required placeholder="Ваш телефон" />
-                <i class="icon-phone input-abs-icon"></i>
-              </div>
-              <br>
-              <div class="form-group relative-w">
-                <input type="email" class="form-control" name="email" required placeholder="Ваш Email" />
-                <i class="icon-envelope-alt input-abs-icon"></i>
-              </div>
-              <div class="form-group relative-w">
-                <input type="password" class="form-control"  name="pass"  required placeholder="Пароль" />
-                <i class="icon-lock input-abs-icon"></i>
-              </div>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Я согласен с <a href="#">правилами</a> и  <a href="#">условиями политики безопасности</a>.
-                  </label>
-                </div>
-              </div>
-              <input type="submit" value="Зарегистрироваться" class="btn btn-success btn-rounded"/>
-              <div class="no-account-yet">
-                У Вас уже есть аккаунт? <a href="/login/login">Войти</a>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+      <!-- .vd_container --> 
     </div>
+    <!-- .vd_content-wrapper --> 
+
+    <!-- Middle Content End --> 
+
   </div>
+  <!-- .container --> 
 </div>
-
-<script src="/fe/js/login.js" type="text/javascript"></script>
-
+<!-- .content -->
