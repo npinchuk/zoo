@@ -58,7 +58,7 @@
                             </div>
                           </div>
                           <div class="col-xs-6 text-right">
-                            <div class=""> <a href="/fe/pages-forget-password.html">Забыли пароль? </a> </div>
+                            <div class=""> <a href="/login/recovery">Забыли пароль? </a> </div>
                           </div>
                         </div>
                       </div>

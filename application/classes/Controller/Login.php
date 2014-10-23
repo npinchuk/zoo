@@ -21,7 +21,11 @@ class Controller_Login extends Controller_Common2 {
   }
 
   public function action_recovery() {
+    // восстановление пароля
+    // action  у формы  = на /login/resend
     $content = View::factory('/login/recovery');
+    $this->template->title = "Восстановление пароля в Unipets"; // название страницы
+    $this->template->keywords = "Восстановление пароля в Unipets"; // название страницы
     $this->template->content = $content;
   }
 
@@ -99,7 +103,7 @@ class Controller_Login extends Controller_Common2 {
   public function action_reg() {
     $content = View::factory('/login/reg');
     $id = $this->request->param('id');
-    
+
     if (isset($id)) {
       $content->error = $id;
     } else {
@@ -120,7 +124,7 @@ class Controller_Login extends Controller_Common2 {
       // такой пользователь уже есть
       Controller::redirect('/login/reg/1');
     } else {
-      
+
       $_POST['pass'] = md5($_POST['pass']);
       $_POST['created'] = date("Y-m-d H:i:s");
       if (isset($_POST['title'])) {
@@ -145,11 +149,11 @@ class Controller_Login extends Controller_Common2 {
       $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
       $email_message = "Здравствуйте, " . $_POST['name'] . "!<br><p>Это письмо вы получили при регистрации на сайте Unipets.ru. Чтобы активировать вашу запись, нажимте <a href='http://unipets.ru/login/check/" . $megasave . "'>сюда</a></p>";
       mail($email_to, $email_subject, $email_message, $headers);
-      
-      
+
+
       $session = Session::instance();
       $session->set('usid', $save->id);
-      $session->set('ustitle', $save->name." ".$save->lastname);
+      $session->set('ustitle', $save->name . " " . $save->lastname);
       $session->set('ustype_id', $save->ustype_id);
       $session->set("ustype_id", $check->ustype_id);
       $session->set("activated", $check->activated);
@@ -172,7 +176,7 @@ class Controller_Login extends Controller_Common2 {
     if ($check->id > 0) {
       // OK. передаем данные в куку чтобы потом было легче жить.
       $session->set("usid", $check->id);
-      $session->set("ustitle", $check->name." ".$check->lastname);
+      $session->set("ustitle", $check->name . " " . $check->lastname);
       $session->set("company", $check->company);
       $session->set("ustype_id", $check->ustype_id);
       $session->set("activated", $check->activated);
