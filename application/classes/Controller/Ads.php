@@ -6,7 +6,8 @@ class Controller_Ads extends Controller_Common {
 
   public function action_list() {
     $content = View::factory('/ads/list');
-    $nav = View::factory('/navs/ads');
+     $head = View::factory('/navs/head'); // верхняя шапка
+    $nav = View::factory('/navs/left'); // левое меню
     $session = Session::instance();
     $usid = $session->get('usid');
     $ustitle = $session->get('ustitle');
@@ -36,6 +37,7 @@ class Controller_Ads extends Controller_Common {
       $content->admodcount = $admodcount;
       $this->template->content = $content;
       $this->template->nav = $nav;
+      $this->template->head = $head;
     } else {
       Controller::redirect('/');
     }
