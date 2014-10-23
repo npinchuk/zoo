@@ -3,15 +3,14 @@
 defined('SYSPATH') or die('No direct script access.');
 
 class Controller_Page extends Controller_Common {
-
   // Главная страница
   public function action_index() {
-//  echo $this->usid;
-    $content = View::factory('/home');
-    $head = View::factory('/navs/head');
     
-    $nav = View::factory('/navs/home');
-    $session = Session::instance();
+//  echo $this->usid;
+    $content = View::factory('/home'); // общий файл контента
+    $head = View::factory('/navs/head'); // верхняя шапка
+    $nav = View::factory('/navs/left'); // левое меню
+    $session = Session::instance(); // стартуем сессии
    
     View::set_global('pagetitle', 'Главная страница');
     View::set_global('breadcrumb', '');

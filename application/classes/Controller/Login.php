@@ -172,8 +172,8 @@ class Controller_Login extends Controller_Common2 {
     if ($check->id > 0) {
       // OK. передаем данные в куку чтобы потом было легче жить.
       $session->set("usid", $check->id);
-      $session->set("ustitle", $check->title);
-      $session->set("manager", $check->manager);
+      $session->set("ustitle", $check->name." ".$check->lastname);
+      $session->set("company", $check->company);
       $session->set("ustype_id", $check->ustype_id);
       $session->set("activated", $check->activated);
       $session->set("email", $check->email);

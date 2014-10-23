@@ -6,7 +6,7 @@
   <!-- End of Data -->
   <head>
     <meta charset="utf-8" />
-    <title>Unipets.ru</title>
+    <title><?php echo $pagetitle;?></title>
     <meta name="keywords" content="HTML5 Template, CSS3, All Purpose Admin Template, " />
     <meta name="description" content="Responsive Admin Template for multipurpose use">
     <meta name="author" content="Venmond">

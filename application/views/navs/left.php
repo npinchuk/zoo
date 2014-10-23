@@ -418,25 +418,25 @@
                   <i class="fa fa-sort-amount-asc"></i>
                 </span>                   
               </div>
-              <h3 class="menu-title hide-nav-medium hide-nav-small">UI Features</h3>
+              <h3 class="menu-title hide-nav-medium hide-nav-small">Поиск объявлений</h3>
               <div class="vd_menu">
                 <ul>
                   <li>
                     <a href="/fe/javascript:void(0);" data-action="click-trigger">
                       <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
-                      <span class="menu-text">Dashboard</span>  
+                      <span class="menu-text">Объявления</span>  
                       <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
                     </a>
                     <div class="child-menu"  data-action="click-target">
                       <ul>
                         <li>
                           <a href="/fe/index.html">
-                            <span class="menu-text">Default Dashboard</span>  
+                            <span class="menu-text">Новое объявление</span>  
                           </a>
                         </li>              
                         <li>
                           <a href="/fe/index-ecommerce.html">
-                            <span class="menu-text">E-Commerce Dashboard</span>  
+                            <span class="menu-text">Мои объявления</span>  
                           </a>
                         </li> 
                         <li>
